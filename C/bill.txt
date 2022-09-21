@@ -1,0 +1,1 @@
+Thank you {{name}} for using our shop {{outlet}} and purchasing {{item}}. We hope you had a good experience and use our outlet again.

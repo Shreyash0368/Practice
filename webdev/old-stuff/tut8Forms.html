@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <center><h1>Survey form</h1></center>
+    <form action="backend.php">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="Myname">
+        </div>
+        <br>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" name="Myemail" id="email">
+        </div>
+        <br>
+        <div>
+            <label for="date">Date:</label>
+            <input type="date" name="date" id="date">
+        </div>
+        <br>
+        <div>
+            <label for="bonus">Bonus: </label>
+            <input type="number" name="bonus" id="bonus">
+        </div>
+        <br>
+        <div>
+            <label for="eligibility">Are you eligible?: </label>
+            <input type="checkbox" name="eligibility" id="eligibility" checked>
+        </div>
+        <br>
+        <div>
+            <label for="sex">Sex: </label>
+            Male <input type="radio" name="sex" id="sex">
+            Female<input type="radio" name="sex" id="sex">
+            Other<input type="radio" name="sex" id="sex">
+        </div>
+        <br>    
+        <div>
+            <label for="description">Write About yourself:</label>
+            <br>
+            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+        </div>
+        <br>
+        <div>
+            <label for="car">Car</label>
+            <select name="car" id="car">
+                <option value="Ind">Indica</option>
+                <option value="Swift">Swift</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+</body>
+</html>
