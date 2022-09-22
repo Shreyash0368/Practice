@@ -1,2 +1,6 @@
 .vscode
 webdev\test-site\images
+*.exe
+*.class
+*.png
+*.jpeg
