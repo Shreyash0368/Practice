@@ -4,4 +4,4 @@ webdev\test-site\images
 *.class
 *.png
 *.jpeg
-*.file
+*file
