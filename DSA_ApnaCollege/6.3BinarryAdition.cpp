@@ -55,7 +55,6 @@ int addBinary(int a, int b)
         a1 = a % 2;
         b1 = b % 2;
         checkDigit(a1, b1, tempSum, count, carry);
-
         a /= 10;
         b /= 10;
     }
