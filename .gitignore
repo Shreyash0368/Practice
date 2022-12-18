@@ -6,3 +6,6 @@ webdev\test-site\images
 *.jpeg
 *.jpg
 file
+*.mp4
+*.webm
+*.svg
