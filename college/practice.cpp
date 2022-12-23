@@ -1,38 +1,29 @@
-#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
 
-int BinarySearch(int array[], int x, int low, int high) 
+
+int main(int argc, char const *argv[])
 {
-  while (low <= high) 
-  {
-    int mid = low + (high - low) / 2;
+    string names[] = { "abc", "cb", "a"};
 
-    if (array[mid] == x)
-      return mid;
+    int size[3];
 
-    if (array[mid] < x)
-      low = mid + 1;
+    for (int i = 0; i < 3; i++)
+    {
+        size[i] = names[i].size();
+    }
 
-    else
-      high = mid - 1;
-  }
+    for (int i = 0; i < 3; i++)
+    {
+        cout << size[i] << " ";
+    }
+    cout << endl;
+    
+    
+    
+   
+   
 
-  return -1;
+
+    return 0;
 }
-
-int main(void) 
-{
-  int array[] = {3, 4, 5, 6, 7, 8, 9, 2};
-  int x;
-  std :: cout << "Enter the number to be searched: ";
-  std :: cin>> x;
-  int n = sizeof(array) / sizeof(array[0]);
-
-  int result = BinarySearch(array, x, 0, n - 1);
-
-  if (result == -1)
-    std::cout << "Not found\n";
-  else
-    std::cout << "Element is found at index: " << result << std :: endl;
-}
-
-
