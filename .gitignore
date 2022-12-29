@@ -12,4 +12,5 @@ file
 *.flf
 *.txt
 nodejs/node_modules/
-
+*.File
+*.prob
