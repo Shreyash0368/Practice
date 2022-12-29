@@ -9,3 +9,7 @@ file
 *.mp4
 *.webm
 *.svg
+*.flf
+*.txt
+nodejs/node_modules/
+
