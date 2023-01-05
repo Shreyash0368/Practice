@@ -16,7 +16,7 @@ int main(int argc, char const *argv[])
 
     do {
         if(sum == k) {
-            cout << st << " " << end << endl;
+            // cout << st << " " << end << endl;
             break;
         }
         else if (sum < k)
