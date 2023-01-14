@@ -78,17 +78,12 @@ function organizeDirectory(dirPath) {
                 isfile = fs.lstatSync(filePath).isFile();
 
                 if(isfile) {
-
                     // getting the category of the file                    
                     let category = getCategory(filePath);
-                    sendFiles(filePath, destinationDirPath, category);          
+                    sendFiles(filePath, destinationDirPath, category);
+                }       
 
-
-                }
-                
-
-            }
-            
+            }            
         }
     }
 }
