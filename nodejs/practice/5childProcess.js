@@ -6,7 +6,7 @@ console.log("opening vsc");
 cp.execSync("code");
 console.log("running js file from another js file");
 // we need to store the output in another variable, the module only converts it into binary code
-let output = cp.execSync("node intro.js");
+let output = cp.execSync("node 4intro.js");
 // hence when we output we have to concat it as string so that binary code is reonverted into readable output
 // same is true for any other code we execute
 console.log("output is: " + output);
