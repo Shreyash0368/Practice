@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const path = require("path");
 const fs = require("fs");
-const process = require("process");
+// const process = require("process");
 const { argv } = require("process");
 
 
@@ -53,37 +53,34 @@ if(cmdArr.includes('-s')) {
     }
     let temp = [];
 
+    let tempString = '';
     for (let i =0; i < buffer.length; i++) {
         if (buffer[i] != null) {
-            temp.push(buffer[i]);
+            // temp.push(buffer[i]);
+            if (tempString == '') {
+                tempString += buffer[i] ;
+            }
+            else {
+                tempString += '\r\n' +buffer[i];
+            }
         }
     }
-    buffer = temp;
-    buffer = buffer.join('\n');
+    buffer = tempString;
+    // buffer = buffer.join('\n');
 }
 
 if(cmdArr.includes('-n') == true && (cmdArr.includes('-b') == false)) {
-    if(cmdArr.includes('-s')) {
-        buffer = buffer.split("\n");
-    }
-    else {
-        buffer = buffer.split("\r\n");
-    }
-
+    buffer = buffer.split("\r\n");
+    
     for (let i =0; i < buffer.length; i++) {
         buffer[i] = `${i + 1} ${buffer[i]}`;
     }
-    buffer = buffer.join('\n');    
+    buffer = buffer.join('\r\n');    
 }
 
 if(cmdArr.includes('-b') == true && (cmdArr.includes('-n') == false)) {
-    if(cmdArr.includes('-s')) {
-        buffer = buffer.split("\n");
-    }
-    else {
-        buffer = buffer.split("\r\n");
-    }
-
+    buffer = buffer.split("\r\n");
+    
     let counter = 1;
     for (let i =0; i < buffer.length; i++) {
         if(buffer[i] != '') {
@@ -91,7 +88,7 @@ if(cmdArr.includes('-b') == true && (cmdArr.includes('-n') == false)) {
             counter++;
         }
     }
-    buffer = buffer.join('\n');    
+    buffer = buffer.join('\r\n');    
 }
 
 
