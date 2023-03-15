@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity-2</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>        
+    </ul>
+
+    <button>Add 7</button>
+
+    <script>
+        // Insert the missing element in the list, insertBefore is called through the parent element
+        let btn = document.querySelector("button");
+        btn.addEventListener("click", (e) => {
+            let ul = document.querySelector("ul");
+            let liList = document.querySelectorAll("li");
+            let eight = liList[6];
+            let seven = document.createElement("li");
+            seven.innerText = '7';
+
+            ul.insertBefore(seven, eight);
+        })
+
+        
+    </script>
+</body>
+</html>
