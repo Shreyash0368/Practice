@@ -1,0 +1,60 @@
+<!-- media queries areused to make websites more mobile friendly, by using this functionality we can change the css applied to the html based on the size of the viewpoprt as well as other factors  -->
+<!-- to use it we have to write @media 'screentype' 'condition and/, conditions' -->
+<!-- it is used in css -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+    <style>
+        body {
+            color: darkcyan;
+        }
+        .title {
+            color: blue;
+        }
+
+        /* @media (max-width: 500px) {
+            .title {
+                color: brown;
+            }
+        } */
+
+        @media print {
+            body {
+                color: darkslateblue;
+            }
+        }
+
+        @media (orientation : landscape) {
+            p {
+                line-height: 50px;
+            }
+        }
+
+           
+        @media (orientation : portrait ) and (max-width: 500px) {
+            p {
+                text-decoration: underline;
+            }
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h1 class="title">Title of page</h1>
+    <br>
+    <h2>Subtitle of page</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias voluptate reprehenderit velit laboriosam ut odio
+       consectetur placeat deleniti accusamus necessitatibus quam laborum modi itaque maxime omnis,
+       autem vel? Numquam culpa reiciendis id? Dolores voluptas quia debitis laudantium omnis aperiam 
+       accusantium, corporis iste, mollitia itaque blanditiis. Suscipit dignissimos quidem quas ducimus repudiandae, omnis blanditiis, facilis repellat,
+       cupiditate asperiores voluptatum magni perspiciatis? Debitis commodi magnam temporibus esse expedita quas iste ducimus, eius accusantium qui cum,
+       asperiores corporis. Quia saepe et aperiam quos!
+    </p>
+    
+</body>
+</html>
