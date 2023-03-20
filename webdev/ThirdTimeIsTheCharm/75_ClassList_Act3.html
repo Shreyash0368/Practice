@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Color</title>
+    <style>
+        .flex-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            height: 10rem;
+            width: 10rem;
+            border: 1px solid black;
+            margin: 15px;
+        }
+
+        .green {
+            background-color: green;
+        }
+        .blue {
+            background-color: blue;
+        }
+        .red {
+            background-color: red;
+        }
+    </style>
+</head>
+<body class="flex-container">
+    <div class="card" data-color = "blue"></div>
+    <div class="card" data-color = "red"></div>
+    <div class="card" data-color = "blue"></div>
+    <div class="card" data-color = "green"></div>
+    <div class="card" data-color = "red"></div>
+    <div class="card" data-color = "blue"></div>
+    <div class="card" data-color = "blue"></div>
+    <div class="card" data-color = "red"></div>
+    <div class="card" data-color = "green"></div>
+    
+    <script>
+        // For the given cards fetch the color stored in the data-color attribute and add it as a class to the div 
+        // also set the data-color of the already clicked card to 'used'
+
+        // classList.add('class_name') : adds the given class 
+        // classList.remove('class_name') : removes the given class 
+        // classList.toggle('class_name') : toggles the given class 
+        // classList.contains('class_name') : returns boolean value if the given class is present or not 
+
+        let cards = document.querySelectorAll(".card");
+        for (let c in cards) {
+            cards[c].addEventListener("click", (e) => {
+                let currCard = cards[c]
+                let color = currCard.getAttribute("data-color");
+                currCard.classList.add(color);
+                currCard.setAttribute("data-color", "used")
+            })
+        }
+    </script>
+</body>
+</html>
