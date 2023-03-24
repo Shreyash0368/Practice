@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>price Ticket</title>
+    <style>
+        * {
+            margin: 0;
+            /* padding: 0;             */
+        }
+        .movie {
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        .price {
+            background-color: red;
+            text-align: center;
+            height: 80px;            
+        }
+
+        div {
+            margin: 15px;
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+        }
+
+        body {
+            display: flex;            
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        select {
+            display: absolute;
+            text-align: center;
+            margin-left: calc(100vw/2);
+            margin-right: calc(100vw/2);
+            margin-top: 2rem;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <select>
+        <option value="none">none</option>
+        <option value="action">action</option>
+        <option value="comedy">comedy</option>
+        <option value="thriller">thriller</option>
+    </select>
+    
+    <div class="ticket">
+        <h3 class="movie" data-category="comedy">example 1</h3>
+        <p class="price">180 rs</p>
+    </div>
+    
+    <div class="ticket">
+        <h3 class="movie" data-category="thriller">example 2</h3>
+        <p class="price">180 rs</p>
+    </div>
+    
+    <div class="ticket">
+        <h3 class="movie" data-category="action">example 3</h3>
+        <p class="price">180 rs</p>
+    </div>
+    
+    <div class="ticket">
+        <h3 class="movie" data-category="comedy">example 4</h3>
+        <p class="price">180 rs</p>
+    </div>
+    
+    <div class="ticket">
+        <h3 class="movie" data-category="thriller">example 5</h3>
+        <p class="price">180 rs</p>
+    </div>
+    
+    <div class="ticket">
+        <h3 class="movie" data-category="action">example 6</h3>
+        <p class="price">180 rs</p>
+    </div>
+    
+    <div class="ticket">
+        <h3 class="movie" data-category="comedy">example 7</h3>
+        <p class="price">180 rs</p>
+    </div>
+    
+    <div class="ticket">
+        <h3 class="movie" data-category="action">example 8</h3>
+        <p class="price">180 rs</p>
+    </div>
+    
+    <div class="ticket">
+        <h3 class="movie" data-category="comedy">example 9</h3>
+        <p class="price">180 rs</p>
+    </div>
+    
+    <div class="ticket">
+        <h3 class="movie" data-category="thriller">example 10</h3>
+        <p class="price">180 rs</p>
+    </div>
+    
+    <div class="ticket">
+        <h3 class="movie" data-category="comedy">example 11</h3>
+        <p class="price">180 rs</p>
+    </div>
+
+    <script>
+        // when the genre of the selct button is changed only the movies with the selected genre should be displayed
+
+        const select = document.querySelector("select");
+        const allMovies = document.querySelectorAll(".ticket");
+
+        select.addEventListener("change", (e) => {
+            let selectOption = select.value;
+
+            if (selectOption === "none") {
+                allMovies.forEach((movie) => {
+                    movie.style.display = "block";
+                })
+            }
+            else {
+                for (let i = 0; i < allMovies.length; i++) {
+                    let h3Elmnt = allMovies[i].querySelector("h3");
+                    let movieGenre = h3Elmnt.getAttribute("data-category");
+                    if (movieGenre === selectOption) {
+                        allMovies[i].style.display = "block";
+                    } else {
+                        allMovies[i].style.display = "none";                        
+                    }
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>
