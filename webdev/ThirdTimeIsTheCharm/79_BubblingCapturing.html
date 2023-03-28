@@ -1,0 +1,69 @@
+<!-- Browser Events (In-depth) | Bubbling, Capturing, Target -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbling and Capturing</title>
+
+    <style>
+        .orange {
+            box-sizing: border-box;
+            height: 100px;
+            width: 100px;
+            background-color: orange;
+        }
+
+        .yellow {
+            box-sizing: border-box;
+            height: 60px;
+            width: 60px;
+            background-color: yellow;
+        }
+
+        .blue {
+            box-sizing: border-box;
+            height: 30px;
+            width: 30px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="orange">
+        <div class="yellow">
+            <div class="blue"></div>
+        </div>
+    </div>
+    
+    <script>
+        let orangeBox = document.querySelector(".orange");
+        let yellowBox = document.querySelector(".yellow");
+        let blueBox = document.querySelector(".blue");
+
+        orangeBox.addEventListener("click", (e) => {
+            alert("orange");
+        } /*true*/) 
+// when we add true as 3rd input parameter then the event listener is triggered in capturing phase (by default it is false which means the event is triggered in bubbling phase) 
+
+        yellowBox.addEventListener("click", (e) => {
+            alert("yellow");
+            e.stopImmediatePropagation() 
+        })
+
+        yellowBox.addEventListener("click", (e) => {
+            alert("yellow 2");
+            // e.stopPropagation() 
+        })
+
+
+// when we add stop propogation, it stops the event which are above or below during bubbling/capturing
+// stop immediate propogation stops event listeners which even belong to the same element 
+
+        blueBox.addEventListener("click", (e) => {
+            alert("blue");
+        })
+    </script>
+</body>
+</html>
