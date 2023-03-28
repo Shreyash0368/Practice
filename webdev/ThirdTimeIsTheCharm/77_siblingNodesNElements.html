@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>delete sibling</title>
+
+    <style>
+        .card {
+            height: 7rem;
+            width: 7rem;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 1rem;
+            border: 1px solid black;
+            margin: 10px;            
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;            
+        }
+
+        button {
+            margin: 2rem calc(100vw/2);
+        }
+    </style>
+</head>
+<body>
+    <button>delete sibling</button>
+    <div class="container">
+        <div class="card">boi</div>
+        <div class="card">boi</div>
+        <div class="card">boi</div>
+        <div class="card">boi</div>
+        <div class="card red">red boi</div>
+        <div class="card">boi</div>
+        <div class="card">boi</div>
+        <div class="card">boi</div>
+        <div class="card">boi</div>
+    </div>
+
+    <script>
+        const buttonElm = document.querySelector("button");
+        
+
+        buttonElm.addEventListener("click", (e) => {
+            const redCard = document.querySelector(".red");            
+            deleteSiblings(redCard);
+
+        })
+
+        function deleteSiblings(element) {
+            let prevSibling = element.previousElementSibling;
+            let nextSibling = element.nextElementSibling;
+
+            while (prevSibling) {
+                prevSibling.remove();
+                prevSibling = element.previousElementSibling;
+            }
+
+            while (nextSibling) {
+                nextSibling.remove();
+                nextSibling = element.nextElementSibling;
+            }
+
+        }
+
+        // we can get all children elements of the container div and then cycle through them and remove the ones that dont match the red card
+    </script>
+    
+</body>
+</html>
