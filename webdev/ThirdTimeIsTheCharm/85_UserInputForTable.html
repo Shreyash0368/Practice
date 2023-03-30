@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User form</title>
+    <style>
+        table {
+            font-size: 2rem;
+            margin-top: 10rem;
+            margin-left: calc(50vw - 6rem);
+            margin-right: auto;
+        }
+        thead td{
+            font-weight: 700;
+            border: 1px solid black;
+            background-color: aquamarine;
+        }
+        tbody td {
+            border: 1px dashed black;
+            background-color: lightcyan;
+        }
+
+        form {
+            margin-top: 5rem;
+            text-align: center;
+        }
+    </style>
+</head>
+
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>S.no</td>
+                <td>Name</td>
+                <td>Marks</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1.</td>
+                <td>Shreyash</td>
+                <td>85</td>
+            </tr>
+
+            <tr>
+                <td>2.</td>
+                <td>Bromama</td>
+                <td>72</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form>
+        <label for="name">Name:
+            <input type="text" id="name" />
+        </label>
+        <label for="marks">Marks:
+            <input type="number" id="marks" />
+        </label>
+        <label>
+            <button type="submit" value="Submit">Submit</button>
+        </label>
+    </form>
+
+    <script>
+        let submit = document.querySelector('button');
+
+        submit.addEventListener('click', (e) => {
+            e.preventDefault()
+            let nameVal = document.querySelector('#name').value; 
+            let marksVal = document.querySelector('#marks').value;
+            let sno = document.querySelector('tbody').childElementCount + 1;
+
+            let tr = document.createElement('tr');
+
+            tr.innerHTML = `
+                <td>${sno}</td>
+                <td>${nameVal}</td>
+                <td>${marksVal}</td>
+            `;
+
+            let tbody = document.querySelector('tbody');
+            tbody.appendChild(tr);            
+        })
+    </script>
+</body>
+
+</html>
