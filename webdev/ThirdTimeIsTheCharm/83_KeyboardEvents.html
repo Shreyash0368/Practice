@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Events</title>
+    <style>
+        input {
+            /* display: absolute; */
+            width: 20rem;
+            height: 3rem;
+            margin-top: 10rem;
+            margin-left: calc(50vw/2);
+            margin-right: calc(50vw/2);
+        }
+
+        p {
+            font-size: 3rem;
+            text-align: center;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Caps lock must be Off</h2>
+    <h2>Shift key must be pressed while typing</h2>
+    <input type="text" id="password" />
+    <p>Caps lock is On!!</p>
+
+    <script>
+        let pElemnt = document.querySelector('p')
+        let input = document.querySelector('#password')
+        let shiftKey;
+
+        input.addEventListener('keydown', (e) => {
+            if (e.getModifierState('CapsLock')) {
+                pElemnt.style.display = 'block'
+                e.preventDefault()                
+                
+            } else {
+                pElemnt.style.display = 'none'
+            }
+
+            if (!shiftKey) {
+                e.preventDefault()                
+            }
+        });
+
+        document.documentElement.addEventListener("keydown", (e) => {
+            if (e.key === 'Shift') {
+                shiftKey = true;
+            }
+        })
+
+        document.documentElement.addEventListener("keyup", (e) => {
+            if (e.key === 'Shift') {
+                shiftKey = false;
+            }
+        })
+
+        
+    </script>
+
+</body>
+
+</html>
