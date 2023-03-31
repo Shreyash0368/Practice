@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation without CSS</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        .ball {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: orange;
+            margin: 1rem;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+
+    <script>
+        let i = 0;
+        let count = 0;
+    
+        let id = setInterval(() => {
+            let allBalls = document.querySelectorAll('.ball');
+            let ballAmount = allBalls.length;
+
+            allBalls[i].style.backgroundColor = 'white'
+
+
+
+            if (i > 0) {
+                allBalls[i - 1].style.backgroundColor = 'orange'
+            }
+            
+            if ( i === 0) {
+                allBalls[ballAmount - 1].style.backgroundColor = 'orange'
+                
+            }
+
+            i = (i + 1) % ballAmount;
+
+        }, 150)
+    </script>
+</body>
+
+</html>
