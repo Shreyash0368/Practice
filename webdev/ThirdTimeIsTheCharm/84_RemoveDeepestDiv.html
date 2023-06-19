@@ -53,7 +53,9 @@
         let button = document.querySelector('button');
 
         button.addEventListener('click', (e) => {
-            let divElmnt = document.querySelector('div')
+            let body = document.querySelector('body');
+            let divElmnt = body.querySelector('div');
+            console.log(divElmnt);
 
             while (divElmnt.childElementCount > 0) {
                 divElmnt = divElmnt.children[0];

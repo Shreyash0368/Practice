@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS without media queries</title>
     <style>
-        div {
+        .colorChange {
             height: 100vh;
             width: 100vw;     
             background-color: aquamarine;       
@@ -14,12 +14,12 @@
     </style>
 </head>
 <body>
-    <div></div>
+    <div class="colorChange"></div>
     
     <script>
-        let div = document.querySelector('div');
-
-        window.addEventListener('resize', (e) => {
+        let div = document.querySelector('.colorChange');
+        
+        window.addEventListener('resize', (e) => {            
             if (window.innerWidth <= 500) {
                 div.style.backgroundColor = 'lightgreen';
             }
